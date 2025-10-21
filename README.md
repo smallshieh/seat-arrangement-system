@@ -33,7 +33,7 @@
 
 ### 方法 2：使用 GitHub Pages（線上版本）
 
-訪問：`https://your-username.github.io/seat-arrangement-system/`
+訪問：`https://smallshieh.github.io/seat-arrangement-system/`
 
 ## 📖 使用說明
 
