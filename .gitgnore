@@ -1,0 +1,21 @@
+# 作業系統
+.DS_Store
+Thumbs.db
+
+# 編輯器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 暫存檔
+*.tmp
+*.bak
+
+# 日誌
+*.log
+
+# Node.js（如果未來使用）
+node_modules/
+npm-debug.log
