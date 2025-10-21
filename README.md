@@ -159,7 +159,7 @@ seat-arrangement-system/
 **您的名字**
 
 - GitHub: [@smallshieh](https://github.com/smallshieh)
-- Email: your.email@example.com
+- Email: smallshieh@gmail.com
 
 ## 🙏 致謝
 
@@ -170,7 +170,7 @@ seat-arrangement-system/
 
 發現 Bug？有功能建議？
 
-請到 [Issues](https://github.com/your-username/seat-arrangement-system/issues) 頁面提交。
+請到 [Issues](https://github.com/smallshieh/seat-arrangement-system/issues) 頁面提交。
 
 ## ⭐ 給個星星
 
