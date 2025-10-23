@@ -489,8 +489,8 @@ const app = {
                 // 跳過已鎖定的座位
                 if (this.seatMatrix[col][row]) continue;
                 
-                // 檢查是否為禁用座位
-                const visualIndex = (this.rows - 1 - row) * this.cols + col;
+                // 檢查是否為禁用座位（使用正確的視覺索引計算）
+                const visualIndex = this.matrixToVisualIndex(col, row);
                 if (this.disabledSeats.has(visualIndex)) continue;
                 
                 // 填入下一個學生
@@ -588,8 +588,8 @@ const app = {
                 // 跳過已鎖定座位
                 if (this.seatMatrix[col][row]) continue;
 
-                // 檢查是否為禁用座位
-                const visualIndex = (this.rows - 1 - row) * this.cols + col;
+                // 檢查是否為禁用座位（使用正確的視覺索引計算）
+                const visualIndex = this.matrixToVisualIndex(col, row);
                 if (this.disabledSeats.has(visualIndex)) continue;
 
                 const expectedGender = expectedGenderMatrix[col][row];
@@ -719,8 +719,8 @@ const app = {
                 // 跳過已鎖定的座位
                 if (this.seatMatrix[col][row]) continue;
                 
-                // 檢查是否為禁用座位
-                const visualIndex = (this.rows - 1 - row) * this.cols + col;
+                // 檢查是否為禁用座位（使用正確的視覺索引計算）
+                const visualIndex = this.matrixToVisualIndex(col, row);
                 if (this.disabledSeats.has(visualIndex)) continue;
                 
                 // 填入下一個學生
@@ -764,6 +764,28 @@ const app = {
     visualToMatrix(visualIndex, student) {
         const coords = this.visualToMatrixCoords(visualIndex);
         this.seatMatrix[coords.row][coords.col] = student;
+    },
+
+    /**
+     * 矩陣坐標轉視覺索引（visualToMatrixCoords 的反向操作）
+     * @param {number} matrixRow - 矩陣行索引
+     * @param {number} matrixCol - 矩陣列索引
+     * @returns {number} 視覺索引
+     */
+    matrixToVisualIndex(matrixRow, matrixCol) {
+        let visualRow, visualCol;
+        
+        if (this.viewMode === 'bottom') {
+            // 黑板在下：最左邊是第1排
+            visualRow = this.rows - 1 - matrixCol;
+            visualCol = matrixRow;
+        } else {
+            // 黑板在上：最右邊是第1排
+            visualRow = matrixCol;
+            visualCol = this.cols - 1 - matrixRow;
+        }
+        
+        return visualRow * this.cols + visualCol;
     },
 
     /**
@@ -1147,7 +1169,7 @@ const app = {
         const total = this.rows * this.cols;
         const disabled = this.disabledSeats.size;
         document.getElementById('seatInfo').textContent = 
-            `${this.rows}列 × ${this.cols}行 | 已安排: ${occupied} | 總座位: ${total} | 禁用: ${disabled}`;
+            `${this.rows}行 × ${this.cols}列 | 已安排: ${occupied} | 總座位: ${total} | 禁用: ${disabled}`;
     },
 
     /**
