@@ -1169,7 +1169,7 @@ const app = {
         const total = this.rows * this.cols;
         const disabled = this.disabledSeats.size;
         document.getElementById('seatInfo').textContent = 
-            `${this.rows}行 × ${this.cols}列 | 已安排: ${occupied} | 總座位: ${total} | 禁用: ${disabled}`;
+            `${this.rows}列 × ${this.cols}行 | 已安排: ${occupied} | 總座位: ${total} | 禁用: ${disabled}`;
     },
 
     /**
