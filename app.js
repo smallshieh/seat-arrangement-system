@@ -5,8 +5,8 @@
 
 const app = {
     // 狀態資料
-    rows: 6,
-    cols: 5,
+    rows: 5,
+    cols: 6,
     students: [],           // 學生清單
     seating: [],           // 視覺層座位陣列
     seatMatrix: [],        // 邏輯矩陣 [col][row]
