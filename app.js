@@ -5,7 +5,7 @@
 
 const app = {
     // 狀態資料
-    rows: 5,
+    rows: 6,
     cols: 6,
     students: [],           // 學生清單
     seating: [],           // 視覺層座位陣列
