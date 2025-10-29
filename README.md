@@ -118,15 +118,17 @@ python -m http.server 8000
 ```
 
 ### 專案結構
-seat-arrangement-system/
-├── index.html          # 主頁面
-├── style.css           # 樣式
-├── app.js              # 主邏輯
-├── utils.js            # 工具函式
-├── docs/               # 文件
-│   ├── USER_GUIDE.md
-│   └── ARCHITECTURE.md
-└── samples/            # 範例資料
+```
+ seat-arrangement-system/
+ ├── index.html          # 主頁面
+ ├── style.css           # 樣式
+ ├── app.js              # 主邏輯
+ ├── utils.js            # 工具函式
+ ├── docs/               # 文件
+ │   ├── USER_GUIDE.md
+ │   └── ARCHITECTURE.md
+ └── samples/            # 範例資料
+ ```
 ## 🤝 貢獻
 
 歡迎貢獻！請遵循以下步驟：
